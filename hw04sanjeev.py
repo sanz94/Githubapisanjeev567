@@ -35,11 +35,11 @@ class TestCases(unittest.TestCase):
 
     def testRepoCount(self):
 
-        self.assertEqual(parseGit("sanz94", "repocount"), 14)
+        self.assertEqual(parseGit("sanz94", "repocount"), 15)
 
     def testRepoList(self):
 
-        self.assertEqual(parseGit("sanz94", "repoCommits"), ['CPE593_2017F', 'Daizo-AI-chatbot', 'Githubapisanjeev567', 'Kriya-website', 'QtClientServerCPP', 'Rain-Data', 'Smart-Home', 'SSW-555', 'SSW567', 'Student-Database', 'TrackPro-Tracking-app', 'Triangle567', 'University-Repository', 'Wall-E'])
+        self.assertEqual(parseGit("sanz94", "repoCommits"), ['CPE593_2017F', 'Daizo-AI-chatbot', 'Githubapisanjeev567', 'Kriya-website', 'QtClientServerCPP', 'RLAI', 'Rain-Data', 'Smart-Home', 'SSW-555', 'SSW567', 'Student-Database', 'TrackPro-Tracking-app', 'Triangle567', 'University-Repository', 'Wall-E'])
 
 
 if __name__ == '__main__':
