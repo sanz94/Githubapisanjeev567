@@ -37,8 +37,8 @@ def parse_git(user_id, optional_param= "repoCommits"):
 
             for item in repos:
                 result.append(item['name'])
-        except:
-            return "Invalid URL".format("https://api.github.com/repos/" + user_id + "/" + rep["name"] + "/commits")
+        except Exception as e:
+            return e
 
     if optional_param == "repocount":
         return len(result)
@@ -59,6 +59,7 @@ class TestCases(unittest.TestCase):
 
         mockedReq.return_value = MockResponse('[{"name": "CPE593_2017F"}, {"name": "Daizo-AI-chatbot"}, {"name": "Githubapisanjeev567"}, {"name": "Kriya-website"}, {"name": "QtClientServerCPP"}, {"name": "Rain-Data"}, {"name": "RLAI"}, {"name": "Smart-Home"}, {"name": "SSW-555"}, {"name": "SSW567"}, {"name": "Student-Database"}, {"name": "TrackPro-Tracking-app"}, {"name": "Triangle567"}, {"name": "University-Repository"}, {"name": "Wall-E"}]')
         self.assertEqual(parse_git('sanz94', 'repoJson'), mockedReq.return_value.text)
+        self.assertEqual(parse_git('sanz94', 'repoCount'), 15)
 
 
 if __name__ == '__main__':
