@@ -7,7 +7,7 @@ import requests
 def parse_git(user_id, optional_param= "repoCommits"):
     repo_list = []
     try:
-        with urllib.request.urlopen("https://aasdasdadasdpi.github.com/users/"+user_id+"/repos") as reporesponse:
+        with urllib.request.urlopen("https://api.github.com/users/"+user_id+"/repos") as reporesponse:
             repohtml = reporesponse.read()
             repoans = json.loads(repohtml)
     except urllib.error.HTTPError:
